@@ -1,38 +1,34 @@
 const signUpFormReducer = (state, action) => {
     switch (action.type) {
         case 'input':
-            return{
+            return {
                 ...state,
                 input:{
                     ...state.input,
                     [action.payload.field]: action.payload.value
-                }
-            
+                }      
             }
-             case 'error':
-            return{
+        case 'error':
+            return {
                 ...state,
                 errors:{
                     ...state.errors,
                     [action.payload.field]: action.payload.value
-                }
-            
+                }      
             }
         case 'resetErrors':
-            const errors ={}
+            const errors = {}
             for(const t in state.errors){
-                errors[t]= ""
+                errors[t] = ""
             }
-            
-            return{
+            return {
                 ...state,
                 errors
             }
         case 'toggleConsent':
-            retrun{
+            return {
                 ...state,
-                    consent: !state.consent
-                
+                consent: !state.consent
             }
         default:
             break;
