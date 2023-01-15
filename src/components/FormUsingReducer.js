@@ -20,7 +20,18 @@ const FormUsingReducer = () => {
 
 
     return (
-
+        <form id="reducer-form" onSubmit={onFormSubmit}>
+            <label htmlFor="name">Name </Label>
+            <input type="text" id="name" value={formState["name"]} onChange={onInput}/>
+                {formState.errors["name"]}
+                </br>
+                </br>
+            <label htmlFor="password">PassWord</Label>
+            <input type="text" id="name" value={formState["passw]}  oChange={onInput}/>
+                {formState.errors["name"]}
+                </br>
+                </br>
+        </form>
     )
 }
 
